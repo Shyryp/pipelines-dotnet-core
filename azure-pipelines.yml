@@ -17,31 +17,31 @@ steps:
     targetType: 'inline'
     script: 'function setVersionMerges($FullCommits, $MergeCommits)
       {
-          $major = 1
-          $minor = 0
-          $patch = 0
+          $major = 1;
+          $minor = 0;
+          $patch = 0;
       
           foreach($merge in $MergeCommits)
           {        
-              $str = "SemVer $major.$minor.$patch "
-              $merge.Comment += $str
-              $minor++
+              $str = "SemVer $major.$minor.$patch ";
+              $merge.Comment += $str;
+              $minor++;
           }
       
-          return $MergeCommits
+          return $MergeCommits;
       }
       
       function getStrWithSemVer($strComment)
       {
           if($strComment -like ''*SemVer*'')
           {
-              $Matches = $null
+              $Matches = $null;
       
               if(($strComment -match ''(?<=SemVer)\s(.+\b)'') -eq $true)
               {
                   if(($Matches -ne $null) -and ($Matches.Count -ne 0)) 
                   {
-                      return ($Matches[0] -replace ''\s'','''')
+                      return ($Matches[0] -replace ''\s'','''');
                   }
               } 
           }
