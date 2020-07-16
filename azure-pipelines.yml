@@ -16,7 +16,7 @@ steps:
   inputs:
         targetType: 'inline'
         script: '# Write your powershell commands here.
-          
-          Write-Host "$(build.sourcesDirectory)"
+          $gett = Get-ChildItem -Path $(build.sourcesDirectory)
+          Write-Host "$gett"
           
           # Use the environment variables input below to pass secret variables to this script.'
