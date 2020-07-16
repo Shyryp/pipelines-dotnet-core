@@ -12,3 +12,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: PowerShell@2
+  inputs:
+    filePath: '$(build.sourcesDirectory)/TFS_AutoSemanticVersioning.ps1'
+    arguments: '-GitFolder ''*'''
