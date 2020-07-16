@@ -14,5 +14,9 @@ variables:
 steps:
 - task: PowerShell@2
   inputs:
-    filePath: '$(build.sourcesDirectory)/TFS_AutoSemanticVersioning.ps1'
-    arguments: '-GitFolder ''*'''
+        targetType: 'inline'
+        script: '# Write your powershell commands here.
+          
+          Write-Host "$(build.sourcesDirectory)"
+          
+          # Use the environment variables input below to pass secret variables to this script.'
